@@ -1,0 +1,29 @@
+<h1>Add Employee</h1>
+<form #empForm=ngForm (ngSubmit)="addData()">
+    <div class="form-group">
+        <label for="exampleInputempid">Employee Id</label>
+        <input type="text" class="form-control" id="exampleInputempid" aria-describedby="idHelp" placeholder="Enter id" name="id" id="eid" [(ngModel)]="empId" #idcontrol="ngModel" required>
+        <small id="idHelp" class="form-text text-muted" *ngIf="idcontrol.touched && idcontrol.invalid">Id Should Be Filled</small>
+      </div>
+
+      <div class="form-group">
+        <label for="exampleInputempname">Employee Name</label>
+        <input type="text" class="form-control" id="exampleInputempname" aria-describedby="nameHelp" placeholder="Enter name" name="name" id="ename" [(ngModel)]="empName" #namecontrol="ngModel" required>
+        <small id="nameHelp" class="form-text text-muted" *ngIf="namecontrol.touched && namecontrol.invalid">Name Should Be Filled</small>
+      </div>
+      <div class="form-group">
+        <label for="exampleInputempsalary">Employee Salary</label>
+        <input type="text" class="form-control" id="exampleInputempsalary" aria-describedby="salaryHelp" placeholder="Enter salary" name="salary" id="esalary" [(ngModel)]="empSalary" #salarycontrol="ngModel" required>
+        <small id="salaryHelp" class="form-text text-muted" *ngIf="salarycontrol.touched && salarycontrol.invalid">Salary Should Be Filled</small>
+      </div>
+      <div class="form-group">
+        <label for="exampleInputempdepartment">Employee Department</label>
+        <input type="text" class="form-control" id="exampleInputempdepartment" aria-describedby="departmentHelp" placeholder="Enter department" name="department" id="edepartment" [(ngModel)]="empDepartment" #departmentcontrol="ngModel" required>
+        <small id="departmentHelp" class="form-text text-muted" *ngIf="departmentcontrol.touched && departmentcontrol.invalid">Department Should Be Filled</small>
+      </div>
+    
+    <td><input type ="submit" value="ADD DATA" class="btn btn-primary" [disabled]="empForm.invalid"/>
+    </td>
+
+   
+</form>
